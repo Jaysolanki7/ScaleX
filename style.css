@@ -33,8 +33,25 @@ nav {
   gap: 2rem;
 }
 nav a {
+  position: relative;
   text-decoration: none;
   color: white;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+
+  width: 0%;
+  height: 2px;
+  background-color: orange;
+
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 header button {
   padding: 1rem 1.5rem;
@@ -43,6 +60,13 @@ header button {
   border: none;
   border-radius: 10px;
   font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+header button:hover {
+  transform: scale(1.05);
+  background-color: #e8521a;
+  color: white;
 }
 .main-headig-container {
   width: 100%;
@@ -68,6 +92,12 @@ header button {
   color: white;
   border: none;
   border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.btn:hover {
+  background-color: #d24410;
+  transform: scale(1.05);
 }
 .active {
   background-color: #e8521a;
@@ -91,9 +121,17 @@ header button {
   overflow: hidden;
   position: relative;
 }
-.card img {
+.card-img-container {
   height: 17rem;
+  overflow: hidden;
+}
+.card-img-container img {
+  height: 100%;
   object-fit: cover;
+  transition: all 1s ease-in-out;
+}
+.card-img-container img:hover {
+  transform: scale(1.1);
 }
 .card-desc {
   padding: 1rem 1.5rem;
@@ -103,8 +141,8 @@ header button {
   gap: 1rem;
 }
 .card-desc h1 {
-  background-color: #3f241a;
-  color: #f0652c;
+  background-color: #d24410;
+  color: #ffffff;
   font-size: medium;
   padding: 10px 20px;
   border-radius: 20px;
